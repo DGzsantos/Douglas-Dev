@@ -26,13 +26,14 @@ export default function CTA() {
           </span>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-            Sua empresa merece um{" "}
-            <span className="gradient-text">sistema de verdade</span>
+            Pare de fazer manual o que{" "}
+            <span className="gradient-text">pode ser automático</span>
           </h2>
 
           <p className="text-slate-300 text-lg sm:text-xl mb-4 max-w-2xl mx-auto leading-relaxed">
-            Me conta qual é o maior problema da sua empresa hoje. Em uma
-            conversa, já consigo te dizer se tenho a solução certa para você.
+            Me conta qual tarefa mais consome o tempo da sua equipe hoje. Em uma
+            conversa, já consigo te mostrar como automatizar e quanto tempo você
+            vai ganhar.
           </p>
 
           <p className="text-slate-500 text-base mb-10">

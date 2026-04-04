@@ -19,6 +19,7 @@ export default function Hero() {
       {/* Glow blobs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-violet-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
@@ -30,7 +31,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs sm:text-sm font-medium px-4 py-2 rounded-full mb-8"
         >
           <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-          Desenvolvedor de Sistemas para Pequenas Empresas
+          Automação e Tecnologia para Pequenas Empresas
         </motion.div>
 
         {/* Headline */}
@@ -41,9 +42,8 @@ export default function Hero() {
           custom={0.1}
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] tracking-tight mb-6"
         >
-          Sistemas de TI para{" "}
-          <span className="gradient-text">organizar e automatizar</span>{" "}
-          sua empresa
+          Automação e sistemas para fazer sua empresa{" "}
+          <span className="gradient-text">trabalhar no automático</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -54,9 +54,10 @@ export default function Hero() {
           custom={0.2}
           className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Transformo processos manuais e planilhas em{" "}
-          <strong className="text-slate-200">sistemas profissionais</strong>.
-          Sua empresa organizada, seus clientes bem atendidos — sem complicação.
+          Crio sistemas, automações e integrações que{" "}
+          <strong className="text-slate-200">eliminam tarefas manuais</strong> e
+          aumentam a produtividade do seu negócio — sem precisar contratar mais
+          pessoas.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -79,7 +80,7 @@ export default function Hero() {
             Falar no WhatsApp agora
           </a>
           <a
-            href="#solucoes"
+            href="#servicos"
             className="group inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-base sm:text-lg transition-all duration-200 w-full sm:w-auto justify-center"
           >
             Ver soluções
@@ -96,8 +97,8 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 text-slate-400"
         >
           {[
-            { value: "< 7 dias", label: "Entrega média do sistema" },
-            { value: "3 segmentos", label: "Empresas, assistências e provedores" },
+            { value: "< 7 dias", label: "Da ideia ao sistema rodando" },
+            { value: "5 soluções", label: "Sistemas, bots, sites e automações" },
             { value: "Suporte direto", label: "Sem fila de atendimento" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
@@ -110,7 +111,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <a
-        href="#problemas"
+        href="#servicos"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 hover:text-slate-300 transition-colors animate-bounce"
         aria-label="Rolar para baixo"
       >

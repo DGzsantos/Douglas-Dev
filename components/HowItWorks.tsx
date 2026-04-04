@@ -18,8 +18,8 @@ const steps = [
     icon: Code2,
     title: "Desenvolvimento e configuração",
     description:
-      "Com base no que você precisa, desenvolvo ou configuro o sistema. Você acompanha o progresso e dá feedbacks durante o processo.",
-    detail: "Prazo médio de 3 a 7 dias úteis",
+      "Com base no que você precisa, desenvolvo o sistema, automação ou bot. Você acompanha o progresso e dá feedbacks durante o processo.",
+    detail: "Prazo médio de 3 a 10 dias úteis",
   },
   {
     step: "03",
@@ -54,8 +54,8 @@ export default function HowItWorks() {
             Como funciona
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-            Do problema ao{" "}
-            <span className="gradient-text">sistema rodando</span>
+            Da ideia à{" "}
+            <span className="gradient-text">solução funcionando</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
             Um processo simples e transparente. Sem surpresas, sem reuniões
@@ -111,7 +111,7 @@ export default function HowItWorks() {
           className="mt-16 text-center"
         >
           <p className="text-slate-300 mb-6 text-lg">
-            Pronto para começar? A primeira conversa é gratuita.
+            Pronto para automatizar? A primeira conversa é gratuita.
           </p>
           <a
             href={WHATSAPP_URL}

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 import Problems from "@/components/Problems";
 import Solutions from "@/components/Solutions";
 import Differentials from "@/components/Differentials";
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="overflow-x-hidden">
       <Header />
       <Hero />
+      <Services />
       <Problems />
       <Solutions />
       <Differentials />

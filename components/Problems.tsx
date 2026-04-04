@@ -100,8 +100,8 @@ export default function Problems() {
             Você se identifica?
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-            Sua empresa ainda trabalha{" "}
-            <span className="text-red-400">no modo difícil?</span>
+            Sua empresa ainda perde tempo{" "}
+            <span className="text-red-400">com o que pode ser automático?</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Esses são os problemas mais comuns que vejo nas empresas que chegam
@@ -124,7 +124,7 @@ export default function Problems() {
           className="mt-14 text-center"
         >
           <p className="text-slate-300 text-xl font-medium">
-            Tudo isso tem solução —{" "}
+            Tudo isso tem solução com automação —{" "}
             <span className="text-blue-400 font-bold">
               simples, rápida e acessível.
             </span>

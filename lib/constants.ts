@@ -1,13 +1,9 @@
-// =====================================================
-// PERSONALIZE AQUI: atualize com seus dados reais
-// =====================================================
-
 // Número do WhatsApp no formato internacional (sem + ou espaços)
 export const WHATSAPP_NUMBER = "5571991833417";
 
 // Mensagem pré-preenchida ao abrir o WhatsApp
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá Douglas! Vi seu site e gostaria de conversar sobre um sistema para minha empresa."
+  "Olá, Vi seu site e gostaria de conversar sobre um sistema para minha empresa."
 );
 
 // URL completa do WhatsApp

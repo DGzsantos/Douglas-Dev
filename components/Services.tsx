@@ -90,7 +90,7 @@ export default function Services() {
             <span className="gradient-text">automatizar seu negócio</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            De bots e automações a sistemas completos — entrego o que sua empresa
+            De bots e automações a sistemas completos, entrego o que sua empresa
             precisa para parar de fazer manual o que pode ser automático.
           </p>
         </motion.div>

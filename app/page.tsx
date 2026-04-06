@@ -1,27 +1,21 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Problems from "@/components/Problems";
-import Solutions from "@/components/Solutions";
-import Differentials from "@/components/Differentials";
-import HowItWorks from "@/components/HowItWorks";
-import SocialProof from "@/components/SocialProof";
-import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Header               from "@/components/Header";
+import Hero                 from "@/components/Hero";
+import Solucoes             from "@/components/Solucoes";
+import Problemas            from "@/components/Problemas";
+import Projetos             from "@/components/Projetos";
+import ProcessoDiferenciais from "@/components/ProcessoDiferenciais";
+import Footer               from "@/components/Footer";
+import WhatsAppFloat        from "@/components/WhatsAppFloat";
 
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
       <Header />
       <Hero />
-      <Services />
-      <Problems />
-      <Solutions />
-      <Differentials />
-      <HowItWorks />
-      <SocialProof />
-      <CTA />
+      <Solucoes />
+      <Problemas />
+      <Projetos />
+      <ProcessoDiferenciais />
       <Footer />
       <WhatsAppFloat />
     </main>

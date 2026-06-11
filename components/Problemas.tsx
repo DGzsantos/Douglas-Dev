@@ -1,6 +1,7 @@
 "use client";
 
 import { useReveal } from "@/hooks/useReveal";
+import { WHATSAPP_URL } from "@/lib/constants";
 import {
   ClipboardX,
   FileSpreadsheet,
@@ -8,37 +9,50 @@ import {
   Clock,
   Shuffle,
   UserX,
+  ArrowRight,
 } from "lucide-react";
 
 const points = [
   {
     icon: ClipboardX,
     title: "Processos sem organização",
+    stat: "68%",
+    statLabel: "das PMEs não têm processos documentados",
     text: "Tarefas, pedidos e chamados espalhados em papel, caderno e grupos de WhatsApp — ninguém sabe o que está pendente.",
   },
   {
     icon: FileSpreadsheet,
     title: "Controle em papel ou planilha",
+    stat: "3x",
+    statLabel: "mais lento que um sistema automatizado",
     text: "Planilhas desatualizadas, papéis que somem e informações que vivem na cabeça de uma pessoa só.",
   },
   {
     icon: AlertTriangle,
     title: "Histórico que se perde",
+    stat: "40%",
+    statLabel: "dos clientes trocam de fornecedor por mal atendimento",
     text: "Quando alguém sai da empresa, o conhecimento vai junto. Clientes precisam explicar o problema toda vez.",
   },
   {
     icon: Clock,
     title: "Atendimento lento",
+    stat: "2h+",
+    statLabel: "de espera afasta o cliente definitivamente",
     text: "Clientes esperando resposta, equipe sem prioridade definida, tempo desperdiçado em tarefa errada.",
   },
   {
     icon: Shuffle,
     title: "Sistemas que não se comunicam",
+    stat: "30%",
+    statLabel: "do tempo é gasto em retrabalho por falta de integração",
     text: "Informação copiada manualmente de um sistema para outro, gerando erros e retrabalho todos os dias.",
   },
   {
     icon: UserX,
     title: "Equipe sobrecarregada com o manual",
+    stat: "15h",
+    statLabel: "semanais perdidas em tarefas que poderiam ser automáticas",
     text: "Horas gastas em tarefas repetitivas que poderiam ser automáticas — tempo que deveria ir para o cliente.",
   },
 ];
@@ -81,26 +95,45 @@ export default function Problemas() {
           {points.map((p, i) => (
             <article
               key={p.title}
-              className={`reveal ${delayClass[i]} flex gap-4 bg-red-500/5 border border-red-500/15 rounded-xl p-5 hover:border-red-500/30 transition-colors duration-300`}
+              className={`reveal ${delayClass[i]} group flex flex-col rounded-2xl p-6 relative overflow-hidden hover:-translate-y-1 transition-all duration-300`}
+              style={{
+                background: "linear-gradient(135deg, #2a131c 0%, #170c12 55%, #140a0d 100%)",
+                border: "1px solid rgba(239,68,68,0.1)",
+              }}
             >
-              <div className="w-10 h-10 rounded-xl bg-slate-900/70 border border-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <p.icon className="w-5 h-5 text-red-400" />
+              {/* Ícone como marca d'água */}
+              <p.icon className="absolute -top-4 -right-4 w-28 h-28 text-red-500/[0.06] pointer-events-none" />
+
+              {/* Estatística em destaque */}
+              <div className="mb-4 relative z-10">
+                <span className="text-4xl font-black text-red-400 leading-none">{p.stat}</span>
+                <p className="text-slate-500 text-xs mt-2 leading-snug max-w-[85%]">{p.statLabel}</p>
               </div>
-              <div>
-                <h3 className="text-white font-semibold text-sm mb-1.5">
-                  {p.title}
-                </h3>
-                <p className="text-slate-500 text-xs leading-relaxed">{p.text}</p>
-              </div>
+
+              <h3 className="text-white font-extrabold text-lg leading-snug mb-2 relative z-10">
+                {p.title}
+              </h3>
+              <p className="text-slate-500 text-xs leading-relaxed flex-1 relative z-10">{p.text}</p>
             </article>
           ))}
         </div>
 
-        {/* Bridge */}
-        <p className="reveal reveal-d3 mt-10 text-center text-slate-300 text-lg font-medium">
-          Todos esses problemas têm solução com{" "}
-          <span className="text-blue-400 font-bold">automação e sistemas certos</span>.
-        </p>
+        {/* Bridge CTA */}
+        <div className="reveal reveal-d3 mt-12 text-center">
+          <p className="text-slate-300 text-lg font-medium mb-6">
+            Todos esses problemas têm solução com{" "}
+            <span className="text-blue-400 font-bold">automação e sistemas certos</span>.
+          </p>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 group"
+          >
+            Quero resolver esses problemas
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
       </div>
     </section>
   );

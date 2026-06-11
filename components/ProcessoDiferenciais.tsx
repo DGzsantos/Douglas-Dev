@@ -77,6 +77,14 @@ const differentials = [
 const stepDelay = ["", "reveal-d1", "reveal-d2", "reveal-d3"];
 const difDelay  = ["", "reveal-d1", "reveal-d2", "reveal-d3", "reveal-d4", "reveal-d5"];
 
+/* ─── Paleta de acento para os mini cards de diferenciais ─────────── */
+const accentPalette = [
+  { wm: "text-blue-500/[0.08]",   border: "rgba(59,130,246,0.12)",  gradient: "linear-gradient(135deg, #1a2a52 0%, #0f172a 60%, #0b3340 100%)" },
+  { wm: "text-cyan-500/[0.08]",   border: "rgba(6,182,212,0.12)",   gradient: "linear-gradient(135deg, #133a47 0%, #0f172a 60%, #0b2333 100%)" },
+  { wm: "text-violet-500/[0.08]", border: "rgba(139,92,246,0.12)",  gradient: "linear-gradient(135deg, #2a1f52 0%, #0f172a 60%, #260b3a 100%)" },
+  { wm: "text-green-500/[0.08]",  border: "rgba(34,197,94,0.12)",   gradient: "linear-gradient(135deg, #15352c 0%, #0f172a 60%, #0b2e1f 100%)" },
+];
+
 export default function ProcessoDiferenciais() {
   const ref = useReveal();
 
@@ -118,15 +126,14 @@ export default function ProcessoDiferenciais() {
                 <span className="hidden lg:block step-connector" aria-hidden="true" />
               )}
 
-              {/* Icon circle */}
-              <div className="relative mb-5">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center shadow-lg shadow-blue-500/25 glow-blue">
-                  <step.icon className="w-6 h-6 text-white" />
-                </div>
-                <span className="absolute -top-2 -right-2 w-6 h-6 bg-slate-950 border border-blue-500/40 rounded-full text-xs font-black text-blue-400 flex items-center justify-center">
-                  {i + 1}
-                </span>
+              {/* Icon outline */}
+              <div className="w-14 h-14 rounded-full border-2 border-blue-400/40 flex items-center justify-center mb-4 text-blue-400">
+                <step.icon className="w-6 h-6" />
               </div>
+
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400/70 mb-2">
+                {step.n}
+              </span>
 
               <h3 className="text-white font-bold text-sm sm:text-base mb-2">
                 {step.title}
@@ -147,22 +154,22 @@ export default function ProcessoDiferenciais() {
 
         {/* Differentials: 2×3 grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {differentials.map((d, i) => (
-            <div
-              key={d.title}
-              className={`reveal ${difDelay[i]} flex items-start gap-4 bg-slate-900/50 border border-slate-800/50 rounded-xl p-5 hover:border-slate-700/60 transition-colors duration-300`}
-            >
-              <div className="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
-                <d.icon className="w-4 h-4 text-blue-400" />
-              </div>
-              <div>
-                <h3 className="text-white font-semibold text-sm mb-1">
+          {differentials.map((d, i) => {
+            const acc = accentPalette[i % accentPalette.length];
+            return (
+              <div
+                key={d.title}
+                className={`reveal ${difDelay[i]} relative overflow-hidden rounded-xl p-5 transition-all duration-300 hover:-translate-y-0.5`}
+                style={{ background: acc.gradient, border: `1px solid ${acc.border}` }}
+              >
+                <d.icon className={`absolute -top-3 -right-3 w-16 h-16 ${acc.wm} pointer-events-none`} />
+                <h3 className="text-white font-bold text-sm mb-1 relative z-10">
                   {d.title}
                 </h3>
-                <p className="text-slate-500 text-xs">{d.text}</p>
+                <p className="text-slate-500 text-xs relative z-10">{d.text}</p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

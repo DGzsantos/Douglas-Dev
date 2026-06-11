@@ -1,7 +1,9 @@
 "use client";
 
 import { useReveal } from "@/hooks/useReveal";
-import { Code2, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { WHATSAPP_URL, WHATSAPP_NUMBER_DISPLAY, EMAIL } from "@/lib/constants";
 
 const WA_PATH =
@@ -67,11 +69,9 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
             {/* Brand */}
             <a href="#" className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                <Code2 className="w-3.5 h-3.5 text-white" aria-hidden="true" />
-              </div>
+              <Image src="/logo.png" alt="CouderLab" width={28} height={28} />
               <span className="font-bold text-white text-sm">
-                Dev<span className="text-blue-400">Code</span>
+                Couder<span className="text-blue-400">Lab</span>
               </span>
             </a>
 
@@ -95,10 +95,13 @@ export default function Footer() {
               </a>
             </nav>
 
-            {/* Copyright */}
-            <p className="text-slate-600 text-xs">
-              © {new Date().getFullYear()} Dev Code
-            </p>
+            {/* Copyright + links legais */}
+            <div className="flex items-center gap-4 text-slate-600 text-xs">
+              <p>© {new Date().getFullYear()} CouderLab</p>
+              <Link href="/politica-de-privacidade" className="hover:text-slate-400 transition-colors">
+                Política de Privacidade
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@
 :root {
   --brand: #2563eb;
   --cyan: #06b6d4;
-  --dark: #0a0f1e;
+  --dark: #000000;
 }
 
 html {
@@ -13,15 +13,15 @@ html {
 }
 
 body {
-  background-color: #0a0f1e;
+  background-color: #000000;
   color: #f8fafc;
   -webkit-font-smoothing: antialiased;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0f172a; }
-::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #333333; border-radius: 3px; }
 
 /* ─── Reveal on scroll (CSS transitions + IntersectionObserver) ─── */
 .reveal {
@@ -43,7 +43,8 @@ body {
 /* ─── Utilities ─── */
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #2563eb, #06b6d4);
   }
   .card-dark {
     @apply bg-slate-900/60 backdrop-blur-sm border border-slate-800/60 rounded-2xl;
@@ -56,14 +57,13 @@ body {
 /* ─── Hero background ─── */
 .mesh-bg {
   background-image:
-    radial-gradient(at 20% 20%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
-    radial-gradient(at 80% 80%, rgba(6, 182, 212, 0.10) 0px, transparent 50%),
-    radial-gradient(at 60% 10%, rgba(99, 102, 241, 0.08) 0px, transparent 40%);
+    radial-gradient(at 20% 20%, rgba(37, 99, 235, 0.06) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(37, 99, 235, 0.04) 0px, transparent 50%);
 }
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
@@ -73,6 +73,20 @@ body {
   50%       { transform: translateY(-6px); }
 }
 .float-animation { animation: float 3s ease-in-out infinite; }
+
+/* ─── Carrossel 3D ─── */
+.carousel-3d-scene {
+  perspective: 1200px;
+  perspective-origin: 50% 40%;
+}
+.carousel-3d-ring {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.carousel-3d-card {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
 
 /* ─── Process step connector ─── */
 .step-connector {

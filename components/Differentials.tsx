@@ -74,7 +74,7 @@ export default function Differentials() {
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
               Não sou uma empresa de TI.{" "}
-              <span className="gradient-text">Sou o Douglas.</span>
+              <span className="gradient-text">Sou o Douglas Santos.</span>
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed mb-6">
               Trabalho diretamente com você para entender o seu negócio, não

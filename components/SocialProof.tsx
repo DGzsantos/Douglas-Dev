@@ -44,19 +44,19 @@ export default function SocialProof() {
         <article
           className="reveal flex flex-col rounded-2xl p-8 sm:p-10 relative overflow-hidden mb-10"
           style={{
-            background: "linear-gradient(135deg, #1a2a52 0%, #0f172a 55%, #0b3340 100%)",
-            border: "1px solid rgba(59,130,246,0.12)",
+            background: "linear-gradient(135deg, #064e3b 0%, #0f172a 55%, #022c22 100%)",
+            border: "1px solid rgba(16,185,129,0.15)",
           }}
         >
-          <Quote className="absolute -top-6 -right-6 w-36 h-36 text-blue-500/[0.07] pointer-events-none" />
+          <Quote className="absolute -top-6 -right-6 w-36 h-36 text-emerald-500/[0.07] pointer-events-none" />
 
-          <Utensils className="w-6 h-6 text-blue-400 mb-5 relative z-10" />
+          <Utensils className="w-6 h-6 text-emerald-400 mb-5 relative z-10" />
 
           <p className="text-slate-200 text-lg sm:text-xl leading-relaxed italic relative z-10 max-w-2xl">
             &ldquo;{featured.quote}&rdquo;
           </p>
 
-          <p className="text-sm font-bold mt-6 relative z-10 text-blue-400">
+          <p className="text-sm font-bold mt-6 relative z-10 text-emerald-400">
             {featured.result}
           </p>
 
